@@ -20,10 +20,10 @@ public class TaskController {
         ResultSetMetaData metadata = resultSet.getMetaData();
         int numColumns = metadata.getColumnCount();
 
-        while(resultSet.next())             //iterate rows
+        while(resultSet.next())
         {
-            JSONObject obj = new JSONObject();      //extends HashMap
-            for (int i = 1; i <= numColumns; ++i)           //iterate columns
+            JSONObject obj = new JSONObject();
+            for (int i = 1; i <= numColumns; ++i)
             {
                 String column_name = metadata.getColumnName(i);
                 obj.put(column_name, resultSet.getObject(column_name));
